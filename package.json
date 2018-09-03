@@ -1,0 +1,24 @@
+{
+  "name": "delegated-execution-subscriptions",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "clevis": "0.0.77",
+    "cors": "^2.8.4",
+    "dapparatus": "^1.0.21",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "ioredis": "^4.0.0",
+    "mocha": "^5.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5",
+    "s3": "^4.4.0"
+  },
+  "scripts": {
+    "start": "PORT=8000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
