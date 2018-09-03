@@ -41,7 +41,7 @@ if(!NETWORK){
 }
 console.log("NETWORK:",NETWORK)
 
-let subscriptionListKey = "subscriptionList"+NETWORK
+let subscriptionListKey = "subscriptionListNEW"+NETWORK
 
 
 let redisHost = 'localhost'
@@ -163,7 +163,7 @@ app.get('/sigs/:contract', (req, res) => {
 app.get('/contracts', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   console.log("/contracts")
-  let deployedContractsKey = "deployedcontracts"+NETWORK
+  let deployedContractsKey = "deployedbyoccontracts"+NETWORK
   redis.get(deployedContractsKey, function (err, result) {
     res.set('Content-Type', 'application/json');
     res.end(result);
@@ -179,6 +179,18 @@ app.get('/subcontracts', (req, res) => {
     res.end(result);
   })
 });
+
+
+app.get('/byoccontracts', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  console.log("/byoccontracts")
+  let deployedSubContractsKey = "deployedbyoccontracts"+NETWORK
+  redis.get(deployedSubContractsKey, function (err, result) {
+    res.set('Content-Type', 'application/json');
+    res.end(result);
+  })
+});
+
 
 
 app.get('/subscriptions', (req, res) => {
@@ -216,11 +228,11 @@ app.post('/sign', (req, res) => {
   res.end(JSON.stringify({hello:"world"}));
 });
 
-app.post('/deploy', (req, res) => {
+app.post('/deploysub', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  console.log("/deploy",req.body)
+  console.log("/deploysub deployed byoc contract ",req.body)
   let contractAddress = req.body.contractAddress
-  let deployedContractsKey = "deployedcontracts"+NETWORK
+  let deployedContractsKey = "deployedbyoccontracts"+NETWORK
   redis.get(deployedContractsKey, function (err, result) {
     let contracts
     try{
@@ -238,27 +250,6 @@ app.post('/deploy', (req, res) => {
   });
 })
 
-app.post('/deploysub', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  console.log("/deploy",req.body)
-  let contractAddress = req.body.contractAddress
-  let deployedSubContractsKey = "deployedsubcontracts"+NETWORK
-  redis.get(deployedSubContractsKey, function (err, result) {
-    let contracts
-    try{
-      contracts = JSON.parse(result)
-    }catch(e){contracts = []}
-    if(!contracts) contracts = []
-    console.log("current contracts:",contracts)
-    if(contracts.indexOf(contractAddress)<0){
-      contracts.push(contractAddress)
-    }
-    console.log("saving contracts:",contracts)
-    redis.set(deployedSubContractsKey,JSON.stringify(contracts),'EX', 60 * 60 * 24 * 7);
-    res.set('Content-Type', 'application/json');
-    res.end(JSON.stringify({contract:contractAddress}));
-  });
-})
 
 app.post('/relayMetaTx', async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

@@ -7,6 +7,7 @@ import axios from 'axios';
 import Miner from './components/miner.js';
 import TxBuilder from './components/txBuilder.js';
 import Subscriptions from './components/subscriptions.js';
+import AllBouncers from './components/allBouncers.js';
 let backendUrl = "http://localhost:10002/"
 console.log("window.location:",window.location)
 /*if(window.location.href.indexOf("metatx.io")>=0)
@@ -14,7 +15,7 @@ console.log("window.location:",window.location)
   backendUrl = "http://stage.metatx.io:10001/"
 }else */if(window.location.href.indexOf("metatx.io")>=0)
 {
-  backendUrl = "https://subbackend.metatx.io/"
+  backendUrl = "https://byocbackend.metatx.io/"
 }
 
 class App extends Component {
@@ -329,7 +330,7 @@ class App extends Component {
                 </div>
                 <div style={{width:"100%",textAlign:"center",fontSize:24}}>
                  <div>recurring subscriptions on the ethereum blockchain</div>
-                 <div>set it and forget it delegate execution</div>
+                 <div>set it and forget it delegated execution</div>
                 </div>
                 <div style={{width:"100%",textAlign:"center",fontSize:14,marginBottom:20}}>
                  please unlock metamask or mobile web3 provider
@@ -345,6 +346,12 @@ class App extends Component {
                   }}>
                   DEPLOY SUBSCRIPTION CONTRACT
                   </Button>
+                </div>
+
+                <div style={{marginTop:150}}>
+                  <AllBouncers
+                    backendUrl={backendUrl}
+                  />
                 </div>
                 </Scaler>
               </div>
@@ -619,7 +626,7 @@ class App extends Component {
             })
           }
           contractsDisplay.push(
-            <div style={{padding:20}}>
+            <div style={{padding:20,marginBottom:600,zIndex:99999}}>
               <div style={{padding:10}}>
                 {sigs}
               </div>

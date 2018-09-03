@@ -32,7 +32,7 @@ class TxBuilder extends Component {
 
         if(DEBUG) console.log("TxBuilder - Loading Contract ABI for address JK HARDCODED FOR NOW ",contractAddress)
 
-        axios.get("http://api-rinkeby.etherscan.io/api?module=contract&action=getabi&address="+contractAddress, { crossdomain: true })
+        axios.get("https://api-rinkeby.etherscan.io/api?module=contract&action=getabi&address="+contractAddress, { crossdomain: true })
         .catch((err)=>{
           console.log("Error getting gas price",err)
           reject(err)
