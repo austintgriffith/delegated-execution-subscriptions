@@ -56,7 +56,7 @@ Huge thanks to [Owocki](https://twitter.com/owocki) of [Gitcoin](https://gitcoin
 ```
     function getSubscriptionHash(
         address from, //the subscriber
-        address to, //the publisher
+        address to, //the target contract or account
         uint256 value, //amount in wei of ether sent from this contract to the to address
         bytes data, //the encoded transaction data (first four bytes of fn plus args, etc)
         Operation operation, //ENUM of operation
@@ -99,7 +99,7 @@ Huge thanks to [Owocki](https://twitter.com/owocki) of [Gitcoin](https://gitcoin
 ```
     function executeSubscription(
         address from, //the subscriber
-        address to, //the publisher
+        address to, //the target contract or account
         uint256 value, //amount in wei of ether sent from this contract to the to address
         bytes data, //the encoded transaction data (first four bytes of fn plus args, etc)
         Operation operation, //ENUM of operation
