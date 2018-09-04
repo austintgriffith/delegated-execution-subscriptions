@@ -1,4 +1,4 @@
-# 🕰️⚙️ Delegated Execution Subscriptions on Ethereum [POS for EIP1337 & EIP948]
+# 🕰️⚙️ Delegated Execution Subscriptions [EIP1337 & EIP948]
 
 Subscriber deploys and funds a proxy (identity) contract. Then, any whitelisted etherless account signs a single off-chain meta transaction that will be periodically sent on-chain and trigger an Ethereum transaction (contract call, token/eth transfer, proxy upgrade, contract deployment, etc).
 
