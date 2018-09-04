@@ -6,7 +6,7 @@ Subscriber deploys and funds a proxy (identity) contract. Then, any whitelisted 
 
 Directly extended from: https://github.com/austintgriffith/token-subscription
 
-Huge thanks to [Owocki](https://twitter.com/owocki) of [Gitcoin](https://gitcoin.co/) and [Andrew Redden](https://twitter.com/androolloyd) of [Groundhog](https://groundhog.network) for the guidance and opportunity to hack on this!
+Huge thanks to [Owocki](https://twitter.com/owocki) & [Seagraves](https://twitter.com/captnseagraves) of [Gitcoin](https://gitcoin.co/) and [Andrew Redden](https://twitter.com/androolloyd) of [Groundhog](https://groundhog.network) for the guidance and opportunity to hack on this!
 
 ## Demo
 
