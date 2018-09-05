@@ -1,8 +1,10 @@
-# 🕰️⚙️ Delegated Execution Subscriptions [EIP1337 & EIP948]
+# 🕰️⚙️ Delegated Execution Subscriptions [EIP1337/EIP948]
+
+> Recurring Ethereum transactions executed through an identity proxy using a single, replayed meta transaction.
 
 A subscriber deploys and funds a proxy (identity) contract. Then, any whitelisted etherless account signs a single off-chain meta transaction that will be periodically sent on-chain to trigger an Ethereum transaction. This transaction can be sending ETH, interacting with a contract, or even deploying a new contract.
 
-This project is the culmination of months of research and of two previous POCs:
+This project is the culmination of months of research and two previous POCs:
 
 [**Bouncer Proxy**](https://github.com/austintgriffith/bouncer-proxy)
     The bouncer-proxy POC demonstrated how an identity contract could be deployed as a proxy and then interacted with using meta transactions. Etherless accounts could be whitelisted and sign off-chain transactions which are then submitted on-chain by incentivized relayers, cryptographically proven, and used to execute typical Ethereum transactions.
@@ -10,7 +12,7 @@ This project is the culmination of months of research and of two previous POCs:
 [**Token Subscriptions**](https://github.com/austintgriffith/token-subscription)
     Token subscriptions are a bare minimum POC to demonstrate how meta transactions can be used with a timestamp nonce trick to replay a single transaction on a periodic basis. We used the ERC20 approve/allowance to control the flow of tokens without the need of other complicated mechanics.
 
-**Delegated Execution Subscriptions** bring these two concepts together.
+> **Delegated Execution Subscriptions** bring these two concepts together.
 
 An identity contract is controlled by whitelisted, etherless accounts to periodically interact with the blockchain signaled by a single meta transaction. **A set it and forget it subscription periodically executes standard Ethereum transactions** powered by an incentivized layer of meta transaction relayers.
 
@@ -233,4 +235,4 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 Directly extended from: https://github.com/austintgriffith/token-subscription
 
-Huge thanks to [Owocki](https://twitter.com/owocki) & [Seagraves](https://twitter.com/captnseagraves) of [Gitcoin](https://gitcoin.co/) and [Andrew Redden](https://twitter.com/androolloyd) of [Groundhog](https://groundhog.network) for the guidance and opportunity to hack on this!
+Huge thanks to [Owocki](https://twitter.com/owocki) & [Seagraves](https://twitter.com/captnseagraves) of [Gitcoin](https://gitcoin.co/) and [Andrew Redden](https://twitter.com/androolloyd) of [Groundhog](https://groundhog.network) for the guidance!!!
