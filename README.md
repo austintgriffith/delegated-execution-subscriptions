@@ -4,10 +4,10 @@ A subscriber deploys and funds a proxy (identity) contract. Then, any whiteliste
 
 This project is the culmination of months of research and of two previous POCs:
 
-    [**Bouncer Proxy**](https://github.com/austintgriffith/bouncer-proxy)
+[**Bouncer Proxy**](https://github.com/austintgriffith/bouncer-proxy)
     The bouncer-proxy POC demonstrated how an identity contract could be deployed as a proxy and then interacted with using meta transactions. Etherless accounts could be whitelisted and sign off-chain transactions which are then submitted on-chain by incentivized relayers, cryptographically proven, and used to execute typical Ethereum transactions.
 
-    [**Token Subscriptions**](https://github.com/austintgriffith/token-subscription)
+[**Token Subscriptions**](https://github.com/austintgriffith/token-subscription)
     Token subscriptions are a bare minimum POC to demonstrate how meta transactions can be used with a timestamp nonce trick to replay a single transaction on a periodic basis. We used the ERC20 approve/allowance to control the flow of tokens without the need of other complicated mechanics.
 
 **Delegated Execution Subscriptions** bring these two concepts together.
