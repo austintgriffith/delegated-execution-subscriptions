@@ -22,6 +22,10 @@ An identity contract is controlled by whitelisted, etherless accounts to periodi
 
 [https://byoc.metatx.io](https://byoc.metatx.io)
 
+## Development
+
+See full development history on [this byoc branch](https://github.com/austintgriffith/token-subscription/commits/byoc).
+
 ## Abstract
 
 A _subscriber_ can deploy a _subscription contract_ to act as their identity and proxy their meta transactions. The _subscriber_ must only sign a single, off-chain meta transaction to start the flow of recurring Ethereum transactions. This meta transaction is periodically sent to the _subscription contract_ via an incentivized relayer network.
