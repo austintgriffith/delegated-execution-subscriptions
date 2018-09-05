@@ -48,7 +48,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 ## Standard
 
 
-```
+```SOLIDITY
     enum SubscriptionStatus {
         ACTIVE,
         PAUSED,
@@ -63,7 +63,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 ```
 
 
-```
+```SOLIDITY
   event ExecuteSubscription(
       address from, //the subscriber
       address to, //the target contract or account
@@ -78,7 +78,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 ```
 
 
-```
+```SOLIDITY
     function updateWhitelist(
         address _account,
         bool _value
@@ -89,7 +89,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 ```
 
 
-```
+```SOLIDITY
     function isSubscriptionPaid(
         bytes32 subscriptionHash,
         uint256 gracePeriodSeconds
@@ -101,7 +101,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function getSubscriptionStatus(
         bytes32 subscriptionHash
     )
@@ -112,7 +112,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function getSubscriptionHash(
         address from, //the subscriber
         address to, //the target contract or account
@@ -130,7 +130,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 ```
 
 
-```
+```SOLIDITY
     function getSubscriptionSigner(
         bytes32 subscriptionHash, //hash of subscription
         bytes signature //proof the subscriber signed the meta trasaction
@@ -141,7 +141,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 ```
 
 
-```
+```SOLIDITY
     function isSubscriptionReady(
         address from, //the subscriber
         address to, //the publisher
@@ -161,7 +161,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function isValidSignerTimestampAndStatus(
         address from,
         address signer,
@@ -175,7 +175,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function getModifyStatusHash(
         bytes32 subscriptionHash,
         SubscriptionStatus status
@@ -187,7 +187,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function isValidModifyStatusSigner(
         bytes32 subscriptionHash,
         SubscriptionStatus status,
@@ -200,7 +200,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function modifyStatus(
         bytes32 subscriptionHash,
         SubscriptionStatus status,
@@ -212,7 +212,7 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 
 
-```
+```SOLIDITY
     function executeSubscription(
         address from, //the subscriber
         address to, //the target contract or account
@@ -233,6 +233,8 @@ Meta transactions can be submitted by any relayer and the relayer can be incenti
 
 ## Acknowledgments
 
-Directly extended from: https://github.com/austintgriffith/token-subscription
+Original Proposal: [https://gist.github.com/androolloyd/0a62ef48887be00a5eff5c17f2be849a](https://gist.github.com/androolloyd/0a62ef48887be00a5eff5c17f2be849a)
+
+Directly extended from: [https://github.com/austintgriffith/token-subscription](https://github.com/austintgriffith/token-subscription)
 
 Huge thanks to [Owocki](https://twitter.com/owocki) & [Seagraves](https://twitter.com/captnseagraves) of [Gitcoin](https://gitcoin.co/) and [Andrew Redden](https://twitter.com/androolloyd) of [Groundhog](https://groundhog.network) for the guidance!!!
